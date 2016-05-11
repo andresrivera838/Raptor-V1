@@ -1,0 +1,22 @@
+{
+  "name": "front_end_framework",
+  "version": "0.0.1",
+  "description": "Front End Framework Docs",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "Andres F. Medina, Juan C. Yepes",
+  "devDependencies": {
+    "grunt": "^0.4.2",
+    "grunt-contrib-concat": "~0.5.0",
+    "grunt-injector": "~0.6.0",
+    "grunt-contrib-compass": "^0.7.2",
+    "grunt-contrib-uglify": "~0.6.0",
+    "grunt-contrib-cssmin": "~0.10.0",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-useref": "0.0.16",
+    "grunt-contrib-copy": "~0.7.0",
+    "grunt-contrib-clean": "~0.6.0"
+  }
+}

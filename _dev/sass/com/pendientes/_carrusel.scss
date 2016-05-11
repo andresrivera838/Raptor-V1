@@ -1,0 +1,58 @@
+ /* <div class="carrusel">
+    <div class="boton flecha_a" id="izquierda"></div>
+    <div class="boton flecha_b" id="derecha"></div>
+    <div class="mascara">
+        <div class="slides clearfix">
+            <div class="flotar item_carrusel">
+                <img src="img/slide_1.png">
+            </div>
+            <div class="flotar item_carrusel">
+                <img src="img/slide_2.png">
+            </div>                            
+        </div>
+    </div>
+</div> */
+.carrusel{
+  position: relative;
+  width: $ancho_sitio;
+  margin: 0 auto;
+  visibility: hidden;
+}
+.slides{
+  position: relative;
+  top:-45px;
+  margin: 60px auto;
+  text-align: center;
+  color: white;
+}
+.mascara{
+	position: relative;
+	top: 85px;
+	margin: 0 auto;
+	overflow:hidden;    
+}
+.flotar{
+	float:left;
+}
+.flecha{
+  width: 75px;
+  height: 75px;  
+  //background: red;
+  cursor: pointer
+}
+.flecha_a{
+  @extend .flecha;
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  margin-top: 85px;
+  z-index: 2;
+}
+.flecha_b{
+  @extend .flecha;
+  position: absolute;
+	top: 50%;
+	right: 10px;
+  margin-top: 85px;
+	z-index: 2;
+}

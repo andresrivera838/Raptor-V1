@@ -1,0 +1,532 @@
+.sprite_book{
+	background-image: url(../img/scrapbook/sprites.png);
+}
+
+#lb_book{
+	// display: block !important;
+}
+
+.libroWrap, #myCanvas{
+	width: 1063px;
+	height: 741px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -531.5px;
+	margin-top: -370.5px;
+	// background-color: red;
+}
+
+.libroWrap{
+	background-image: url(../img/libro.png);
+	// display: none;
+}
+.msj_foto1,
+.amigas_por_siempre,
+.bff,
+.btn_examinar_foto1,
+.btn_foto2_derecha,
+.btn_foto2_izquierda,
+.btn_pais_derecha,
+.btn_pais_izquierda,
+.cadenas,
+.cd_wrap,
+.foto_ng,
+.foto1,
+.foto2_wrap,
+.keep_calm_wrap,
+.mascota,
+.mensaje,
+.mini_instrucciones,
+.paises_wrap,
+.pin1,
+.pin2,
+.postres_wrap,
+.promesa,
+.titulo_pais,
+.examinar1,
+.examinar2,
+.examinar3,
+.btn_keep_derecha,
+.btn_keep_izquierda,
+.btn_postres_izquierda,
+.btn_postres_derecha
+{
+	position: absolute;
+}
+
+.examinar1,
+.examinar2,
+.examinar3,
+.btn_examinar_foto1,
+.btn_pais_derecha,
+.btn_pais_izquierda,
+.btn_foto2_derecha,
+.btn_foto2_izquierda,
+.btn_keep_derecha,
+.btn_keep_izquierda,
+.btn_postres_izquierda,
+.btn_postres_derecha
+{
+	cursor: pointer;
+}
+
+.btnCerrarBook{
+	@extend .sprite_2-btn_cerrar_book;
+	width: 41px;
+	position: absolute;
+	top: 40px;
+	right: 0;
+	cursor: pointer;
+}
+
+
+.foto2FotoWrap{
+	background-size: contain;
+	background-repeat: no-repeat;
+	position: absolute;
+	top: 74px;
+	left: 28px;
+	background-color: white;
+	width: 182px;
+	height: 146px;
+	background-image: url(../img/foto2_default.png);
+	background-position: center;
+	@include rotate(-5deg);
+}
+
+
+.foto3FotoWrap{
+	background-image: url(../img/foto2_default.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	position: absolute;
+	top: 134px;
+	left: 138px;
+	background-color: white;
+	width: 150px;
+	background-position: center;
+	height: 146px;
+	@include rotate(6deg);
+}
+
+.foto2Rotador{
+	position: absolute;
+	top: 15px;
+	left: 14px; 	
+	width: 157px;
+	height: 141px;
+}
+
+.paisesRotador{
+	position: absolute;
+	top: 9px;
+	left: 11px;
+	width: 398px;
+	height: 100px;
+	@include rotate(-1deg);
+}
+
+.postresRotador{
+	position: absolute;
+	top: 10px;
+	left: 221px;
+	width: 145px;
+	height: 145px;
+	@include border-radius(50%);
+}
+
+.foto1FotoWrap{
+	background-size: contain;
+
+	background-repeat: no-repeat;
+	position: absolute;
+	top: 19px;
+	left: 13px;
+	width: 232px;
+	height: 169px;
+	background-image: url(../img/foto1_default.png);
+	background-position: center;
+	@include rotate(1deg);
+}
+
+.amigas_por_siempre{
+	p{
+		margin-top: 55px;
+		text-align: center;
+		font-family: jandasafeandsoundsolid;
+		color: #ffffff;
+		font-size: 30.47px;
+	}
+}
+
+.keepRotador{
+	position: absolute;
+	top: 21px;
+	left: 12px;
+	// background-color: #ff0;
+	width: 130px;
+	height: 163px;
+	// @include rotate(4deg);
+}
+
+
+
+
+
+.promesa input[type="text"] {
+	position: relative;
+	width: 139px;
+	margin-left: 239px;
+	margin-top: 29px;
+	height: 25px;
+	border: 0;
+	background-color: transparent;
+	// background-color: cyan;
+	font-size: 14px;
+	font-family: jandasafeandsoundsolid;
+	color: $rosado_claro;
+}
+
+
+/*------------------------- Subir fotos --------------------*/
+
+.examinar1 div,
+.examinar2 div,
+.examinar3 div
+{
+	line-height: 1em;
+	font-size: 16px;
+	margin-top: 11px;
+	text-align: center;
+	font-family: 'olivierdemo';
+	cursor: pointer;
+}
+
+.examinar1 div{
+	@include rotate(0deg);
+	color: #ff3496;
+}
+.examinar1:hover div{
+	color: white;
+}
+
+.examinar2 div{
+	margin-top: 17px;
+	@include rotate(-5deg);
+	color: white;
+}
+
+.examinar2:hover div{
+	
+	color: white;
+}
+
+
+.examinar3 div{
+	margin-top: 22px;
+	@include rotate(9deg);
+	color: #ff3496;
+}
+
+.examinar3:hover div{
+	
+	color: white;
+}
+
+.btnSubir{
+	display: none;
+}
+
+
+.examinar1{
+	.btnSubir{
+		font-size: 24px !important;
+		margin-top: 14px!important
+	}
+}
+
+.examinar2{
+	.btnSubir{
+		font-size: 24px !important;
+		margin-top: 21px !important;
+	}
+}
+
+.examinar3{
+	.btnSubir{
+		font-size: 24px !important;
+		margin-top: 27px !important;
+	}
+}
+/*------------------------- Subir fotos --------------------*/
+
+
+
+/*------------------------- cadenas nombres de amigas --------------------*/
+
+.cadenas input{
+
+}
+.cadenas textarea {
+	border: none;
+	outline: none;
+}
+.cadenas textarea:nth-child(1) {
+	position: relative;
+	width: 65px;
+	margin-left: 18px;
+	margin-top: 34px;
+	height: 44px;
+	background-color: transparent;
+	border: 0;//1px solid;
+	font-size: 14px;
+	font-family: jandasafeandsoundsolid;
+	color: #ff2d93;
+	text-align: center;
+	resize: none;
+	overflow: hidden;
+}
+ 
+.cadenas textarea:nth-child(2) {
+	position: relative;
+	width: 65px;
+	margin-top: 45px;
+	margin-left: 0px;
+	height: 44px;
+	background-color: transparent;
+	border: 0;//1px solid;
+	font-size: 14px;
+	font-family: jandasafeandsoundsolid;
+	color: #ff2d93;
+	text-align: center;
+	resize: none;
+	overflow: hidden;
+}
+
+.cadenas textarea:nth-child(3) {
+	position: absolute;
+	top: 27px;
+	left: 163px;
+	width: 65px;
+	height: 44px;
+	background-color: transparent;
+	border: 0;//1px solid;
+	font-size: 14px;
+	font-family: jandasafeandsoundsolid;
+	color: #ff2d93;
+	text-align: center;
+	resize: none;
+	overflow: hidden;
+}
+
+/*------------------------- cadenas nombres de amigas --------------------*/
+
+
+
+
+
+.examinar1,
+.examinar2,
+.examinar3
+{
+
+	input[type="file"]{
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: block;
+		width: 100%;
+		height: 46px;
+		opacity: 0;
+		overflow: hidden;
+		z-index: 1;
+
+	}
+
+	input[type="submit"]{
+		display: none;
+		position: absolute;
+		top: 0;
+		left: 0;
+		// background-color: red;
+		display: block;
+		width: 100%;
+		height: 46px;
+		opacity: 0;
+		overflow: hidden;
+		z-index: 0;
+	}
+}
+
+
+#myIframe{
+	display: none;
+}
+
+
+.keep_item {
+	width: 138px;
+	height: 164px;
+	position: relative;
+	float: left;
+}
+#keep_mask {
+	overflow: hidden;
+	width: 138px;
+	height: 164px;
+	left: 7px;
+}
+
+.keep_rail {
+	width: 138px;
+}
+.keep_item_1 {
+	background: url(../img/keep_1.png);
+}
+.keep_item_2 {
+	background: url(../img/keep_2.png);
+}
+.keep_item_3 {
+	background: url(../img/keep_3.png);
+}
+.keep_item_4 {
+	background: url(../img/keep_4.png);
+}
+
+
+.paises_item {
+	width: 420px;
+	height: 115px;
+	position: relative;
+	float: left;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+#paises_mask {
+	overflow: hidden;
+	width: 420px;
+	height: 115px;
+	left: 7px;
+}
+
+.paises_rail {
+	width: 447px;
+}
+.paises_item_1 {
+	background-image: url(../img/paises_1.jpg);
+}
+.paises_item_2 {
+	background-image: url(../img/paises_2.jpg);
+}
+.paises_item_3 {
+	background-image: url(../img/paises_3.jpg);
+}
+.paises_item_4 {
+	background-image: url(../img/paises_4.jpg);
+}
+
+
+.postre_item {
+	width: 147px;
+	height: 148px;
+	position: relative;
+	float: left;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+#postre_mask {
+	overflow: hidden;
+	width: 147px;
+	height: 148px;
+}
+
+.postre_rail {
+	width: 147px;
+}
+.postre_item_1 {
+	background-image: url(../img/postre_1.png);
+}
+.postre_item_2 {
+	background-image: url(../img/postre_2.png);
+}
+.postre_item_3 {
+	background-image: url(../img/postre_3.png);
+}
+.postre_item_4 {
+	background-image: url(../img/postre_4.png);
+}
+
+
+
+.bff_item {
+	width: 159px;
+	height: 158px;
+	position: relative;
+	float: left;
+	// background-size: contain;
+	background-repeat: no-repeat;
+}
+#bff_mask {
+	overflow: hidden;
+	width: 159px;
+	height: 141px;
+}
+
+.bff_rail {
+	width: 159px;
+}
+.bff_item_1 {
+	background-image: url(../img/bff_1.png);
+}
+.bff_item_2 {
+	background-image: url(../img/bff_2.png);
+}
+.bff_item_3 {
+	background-image: url(../img/bff_3.png);
+}
+
+
+.btnPublicar{
+	@extend .sprite_2-btn_publicar;
+	position: absolute;
+	top: 662px;
+	left: 50%;
+	margin-left: -150px;
+	cursor: pointer;
+}
+
+.lb_mail_wrap {
+	@include centerAbsolute($width: 614px, $height:404px);
+	margin-top: -230px;
+	@extend .sprite_1-lb_mail;
+}
+.lb_nombre_amiga_input {
+	position: absolute;
+	top: 183px;
+	width: 250px;
+	left: 178px;
+}
+
+.lb_mail_input {
+	position: absolute;
+	top: 251px;
+	width: 250px;
+	left: 178px;
+}
+
+.lb_btn_cerrar_mail {
+	position: absolute;
+	top: 88px;
+	right: 72px;
+	width: 41px;
+	@extend .sprite_2-btn_cerrar_book;
+}
+
+.lb_btn_mail {
+	position: absolute;
+	top: 297px;
+	left: 194px;
+	cursor: pointer;
+	@extend .sprite_1-lb_btn_mail;
+}

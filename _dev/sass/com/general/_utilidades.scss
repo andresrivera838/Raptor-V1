@@ -1,0 +1,286 @@
+@import "compass/css3";
+
+// this is an example mixin
+// @mixin     contenedorPrincipal
+// @param     $first {String} the first parameter is a string
+// @param     $second {Number} the second parameter is a number
+// @param     $third {List} this one is a list!
+// @usage:
+// =example-mixin(first, 2, (3))
+
+@mixin contenedorPrincipal($ancho:960px,$alto:640px,$mt:0px){
+	position: relative;
+	width:$ancho;
+	height:$alto;
+	margin:$mt auto;
+}
+
+@mixin centerAbsolute($width: -1px, $height: -1px) {
+	position: absolute;
+	top: 50%;
+	left:50%;
+	width: $width;
+	height: $height;
+	margin-top: -$height/2;
+	margin-left:  -$width/2;
+}
+@mixin pa($top:0px,$left:0px,$width:-1px,$height:-1px,$bkg:"",$bkgcolor:transparent,$z:0,$d:true){
+	position: absolute;
+	top:$top;
+	left:$left;
+	@if not $d{
+		display: none;
+	}
+	@if $left == 50% {
+		margin-left: - $width/2;
+	}
+	@if $top == 50% {
+		margin-top: - $height/2;
+	}
+	@if $width != -1px{
+		width:$width;
+	}
+	@if $height != -1px {
+		height:$height;
+	}
+	//@if $bkg !="" or $bkgcolor!="" { and, or, not
+	@if $bkg !="" {		
+		background: image-url($bkg) $bkgcolor no-repeat;
+	}
+	@else
+	{
+		background-color: $bkgcolor !important;
+	}
+	z-index:$z;
+		
+}
+
+
+@mixin comboBox($ancho:100px,$alto:30px,$grosor:0px,$estilo:solid,$color_borde:black,$color_texto:black,$imagen_fondo:transparent){		
+	$paso_borde:4px;//if($imagen_fondo!=transparent, 0px, 4px);
+	position: relative;
+	display:inline-block;
+	overflow: hidden;
+	background:$imagen_fondo no-repeat scroll right center #FFFFFF;
+	width: $ancho;
+	height: $alto; 		
+	border:$grosor $estilo $color_borde;
+	margin-left: -2px;
+	@include border-radius(6px);
+	&{
+		select{
+			cursor: pointer;
+			background: none repeat scroll 0 0 transparent;
+			border: medium none;
+			color: $color_texto;
+			font-family: tahoma;
+			font-size: 14px;
+			margin-left: 5px;
+			margin-top: 5px;
+			width: $ancho + $paso_borde + 20px;	
+			overflow: hidden;
+			/*background:transparent;
+			position: absolute;	
+			width: $ancho + $paso_borde + 30px;	
+			padding-left: 5px;
+			font-family: tahoma, verdana, arial;
+			color:$color_texto;	
+			height: $alto + $paso_borde;	
+			top: - $paso_borde/2; 
+			left: - $paso_borde/2;*/
+		}
+	}
+}
+/*  <div class="combo_box">
+    <select>
+        <option>día</option>
+        <option>01</option>
+        <option>02</option>
+    </select>
+ </div>  
+.combo_box{
+	image-url arguments:
+	$path: path relative to images directory in config.rb
+	$path-only: if true, will cause only the path to be returned instead of a `url()` function
+	$cache-buster: When set to `false` no cache buster will be used (i.e. `?313420982`)	
+	@include comboBox($ancho:214px,
+					  $alto:22px,
+					  $color_texto:#9900FF,
+					  $imagen_fondo:image-url('bkg_combo_ejemplo.png', false, true));
+}
+*/
+.lightbox_wrap {
+	position: relative;
+	width: 100%;
+	// height: 2454px;
+}
+.boton{
+	cursor: pointer;	
+	display:inline-block;
+}
+::-moz-selection {
+    background: $color_seleccion;
+    text-shadow: none;
+}
+::selection {
+    background: $color_seleccion;
+    text-shadow: none;
+}
+
+p,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	&::moz-selection,
+	&::selection {	
+		color:white;
+	    background: $color_seleccion;
+	    text-shadow: none;
+	}
+}
+
+
+input {
+	&::-webkit-input-placeholder { /* WebKit browsers */
+	    color: $color_placeholder!important;
+	}
+	&:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+	    color: $color_placeholder!important;
+	}
+	&::-moz-placeholder { /* Mozilla Firefox 19+ */
+	    color: $color_placeholder!important;
+	}
+	&:-ms-input-placeholder { /* Internet Explorer 10+ */
+	    color: $color_placeholder!important;
+	}
+
+}
+
+.placeholder {
+    color: $color_placeholder!important;
+}
+
+.tableCentering{
+	&{
+		>div{
+			position: relative;
+			height: 100%;
+			width: 100%;
+			margin: 0px auto;
+			border: solid 0px;
+			display: table;
+			background-color: transparent;
+			&{
+				>div{
+					vertical-align: middle;
+					display: table-cell;
+					text-align: center;
+					background-color: transparent;
+				}
+			}
+		}
+	}
+}
+
+
+
+.rightTooltip{
+	display: none;
+	background: none repeat scroll 0 0 #0A4978;
+	border-color: rgba(207, 212, 219, 0.75);
+	border-radius: 5px 5px 5px 5px;
+	box-shadow: 1px 1px 13px #023A68;
+	min-height: 44px;
+	padding-bottom: 13px;
+	padding-top: 14px;
+	position: absolute;
+	left: 149%;
+	top: -18px;
+	width: 208px;
+	z-index: 30;
+	@include border-radius(10px);
+
+	&:before{
+		content: "";
+		position: absolute;
+		background-color: #0a4978;
+		width: 20px;
+		height: 20px;
+		left: -10px;
+		position: absolute;
+		top: 18px;
+		@include rotate(45deg);
+
+	}
+	p{
+		text-align: left;
+		color: #FFFFFF;
+		font-family: Tahoma, Verdana, Arial;
+		font-size: 14px;
+		margin-left: 13px;
+		text-align: left;
+		width: 178px;
+	}
+}
+
+
+.upperTooltip{
+	display: none;
+	background: none repeat scroll 0 0 #0A4978;
+	border-color: rgba(207, 212, 219, 0.75);
+	border-radius: 5px 5px 5px 5px;
+	box-shadow: 1px 1px 13px #023A68;
+	min-height: 44px;
+	padding-bottom: 13px;
+	padding-top: 14px;
+	position: absolute;
+	left: 149%;
+	top: -18px;
+	width: 208px;
+	z-index: 30;
+	@include border-radius(10px);
+
+	// display: block;
+	left: 380px;
+	top: -135px;
+	text-align: center;
+
+	&:before{
+		content: "";
+		background-color: #0a4978;
+		width: 20px;
+		height: 20px;
+		left: 50%;
+		margin-left: -10px;
+		position: absolute;
+		bottom: -10px;
+		@include rotate(45deg);
+
+	}
+	p{
+		text-align: left;
+		color: #FFFFFF;
+		font-family: Tahoma, Verdana, Arial;
+		font-size: 14px;
+		margin-left: 13px;
+		text-align: left;
+		width: 178px;
+	}
+}
+
+
+@mixin centrar($width,$height){	
+	width: $width;
+	height: $height;
+	margin:0 auto;
+}
+
+@for $i from 1 through 60 {
+  .fontSize#{$i} { 
+  	font-size: #{$i}px; 
+  }
+}

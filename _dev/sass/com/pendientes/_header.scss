@@ -1,0 +1,105 @@
+.header {
+	width: 960px;
+	height: 92px;
+	margin: 0 auto;
+	position: relative;
+	z-index: 10;
+	&>div {
+		float: left;
+	}
+
+}
+
+.nav {
+	margin-left: -36px;
+	&, li {
+		float: left;
+	}
+
+	li {
+		a {
+			font-family: "jandasafeandsoundsolid";
+			font-size:13px;
+			color:#f485c2;
+			text-decoration: none;
+			text-align: center;
+			padding: 21px 0;
+			display: block;
+		}
+		.double_line {
+			padding: 12px 0;
+		}
+
+		&:hover a{
+			color:#00dbd9;
+		}
+	}
+
+	.btn_home {
+		cursor: pointer;
+		@extend .sprite_1-btn_home;
+	}
+
+	.btn_instrucciones,
+	.btn_book,
+	.btn_galeria {
+		display: block;
+		cursor: pointer;
+		@extend .sprite_1-btn_menu;
+	}
+
+	.btn_home_active {
+		@extend .sprite_1-btn_home_actived;
+	}
+	.btn_menu_active {
+		a {
+			color:#00dbd9;
+		}
+		@extend .sprite_1-btn_menu_active;
+	}
+}
+
+.logo_actividad {
+	cursor: pointer;
+	@extend .sprite_1-logo_actividad;
+}
+
+.social_wrap {
+	.texto {
+		font-family: "jandasafeandsoundsolid";
+		font-size: 13.81px;
+		color: #aafff2;
+		float: left;
+		margin-top: 25px;
+		margin-left: 10px;
+	}
+
+	.social_btn_wrap {
+		list-style: none;
+		float: left;
+		padding: 0px;
+		margin-left: 10px;
+		margin-top: 24px;
+		li {
+			float: left;
+		}
+	}
+
+	.btn_fb,
+	.btn_tw,
+	.btn_instagram {
+		cursor: pointer;
+
+	}
+
+	.btn_fb {
+		@extend .sprite_1-btn_fb;
+	}
+	.btn_tw {
+		@extend .sprite_1-btn_tw;
+	}
+	.btn_instagram {
+		@extend .sprite_1-btn_instagram;
+	}
+
+}

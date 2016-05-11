@@ -1,0 +1,54 @@
+.footer {
+	position: absolute;
+	top: 660px;
+	width: 100%;
+}
+.footer_content {
+	width: 960px;
+	height: 90px;
+	margin: 0 auto;
+
+	.btn_nol_small {
+		float: right;
+		@extend .sprite_1-logo_nol_small;
+		cursor: pointer;
+	}
+	.btn_condiciones {
+		float: left;
+		cursor: pointer;
+		&:hover .over_condiciones{
+			display: block;
+		}
+		a {
+			font-family: "jandasafeandsoundsolid";
+			font-size:13px;
+			color:#f485c2;
+			text-decoration: none;
+			text-align: center;
+			padding: 21px 0;
+			display: block;
+			&:hover {
+				color:#00dbd9;
+			}
+
+
+		}
+		.over_condiciones {
+			position: relative;
+			top:-125px;
+			display: none;
+			@extend .sprite_1-condiciones_over;
+
+			p {
+				position: absolute;
+				width: 100%;
+				font-family: "verdana";
+				font-size: 11px;
+				color:white;
+				line-height: 11px;
+				text-align: center;
+			}
+		}
+		@extend .sprite_1-btn_condiciones;
+	}
+}

@@ -1,0 +1,452 @@
+body{
+	background-image: url(../img/back.jpg);
+	overflow-x: hidden;
+}
+
+
+
+.main_wrap {
+	position: relative;
+	width: 100%;
+	height: 1374px;
+	overflow: hidden;
+}
+
+.mi_formulario{
+	position: absolute;
+	width: 960px;
+	height: 1374px;
+	left: 50%;
+	// background-color: rgba(1,200,200,.5);
+	margin-left: -480px;
+}
+
+
+.logoActividad{
+	position: absolute;
+	top: 0px;
+	left: 100px;
+}
+
+.eresMuyEspecial{
+	position: absolute;
+	top: 71px;
+	left: 396px;
+}
+
+.fondoCampos{
+	position: absolute;
+	top: 193px;
+	left: 50%;
+	margin-left: -443px;
+}
+
+.fondoPreguntas{
+	position: absolute;
+	top: 563px;
+	left: 50%;
+	margin-left: -438.5px;
+}
+
+.fondoPata{
+	position: absolute;
+	top: 1046px;
+	left: 50%;
+	margin-left: -373px;
+
+	input[type="checkbox"]{
+		position: absolute;
+		top: 0px;
+		left: 50%;
+		margin-left: -331px;
+	}
+	p{
+		// float: left;
+		text-align: center;
+		color: #44067F;
+		font-size: 15px;
+		font-family: museo_slab_500;
+		font-weight: 700;
+		margin-top: -5px;
+
+		span{
+			color: #44067F;
+			font-family: museo_slab_500;
+			font-size: 15px;
+
+		}
+		a{
+			color: #44067F;
+			font-family: museo_slab_500;
+			font-size: 15px;
+		}
+		a:hover span{
+			color: #FF00AE;
+		}
+		a:hover{
+			color: #FF00AE;
+		}
+
+
+	}
+}
+
+// .fondoPata p:first-child{
+// 	margin-left: 8px !important;
+// }
+
+.btnEnviar{
+	position: absolute;
+	top: 89px;
+	left: 585px;
+	cursor: pointer;
+}
+
+.eresLoMaximo{
+	position: absolute;
+	top: 1228px;
+	left: 50%;
+	margin-left: -330px;
+}
+
+.terminosCondiciones{
+	position: absolute;
+	top: 94px;
+	right: 50%;
+	margin-right: 10px;
+	cursor: pointer;
+}
+
+.politicaPrivacidad{
+	position: absolute;
+	top: 94px;
+	left: 50%;
+	margin-left: 10px;
+	cursor: pointer;
+}
+
+.flechas_wrap{
+	position: fixed;
+	right: 100px;
+	top: 50%;
+	margin-top: -60px;
+	div{
+		cursor: pointer;
+	}
+	// background-color: red;
+}
+
+
+
+/*------------------------- Campos formulario --------------------*/
+
+.mensajeError{
+	width: autorizas;
+	background-color: #FCEE21;
+	position: absolute;
+	top: 30px;
+	left: 292px;
+	display: none;
+	color: #FF1FB3;
+	height: 2em;
+	font-size: 15px;
+	padding-left: 10px;
+	line-height: 2em;
+	font-family: museo_slab_500;
+	padding-right: 10px;
+}
+
+.fondoCampos{
+	input[type="text"] {
+		position: relative;
+		// margin-left: 184px;
+		// margin-top: 54px;
+		width: 522px;
+		height: 26px;
+		// @include border-radius(18px);
+		border: 0;
+		background-color: transparent;
+		padding-left: 10px;
+		padding-right: 10px;
+		color: #8A00FF;
+		font-family: Trebuchet MS;
+		font-size: 12px;	
+
+	}
+}
+
+.nombreCompleto{
+	margin-left: 294px;
+	margin-top: 65px;
+}
+
+.documentoIdentidad,
+.documentoIdentidad,
+.correoElectronico,
+.direccion,
+.telefono{
+	margin-top: 11px;
+	margin-left: 294px;
+}
+
+
+
+/*------------------------- Campos departamento y ciudad --------------------*/
+.departamento_ciudad{
+	position: relative;
+	width: 544px;
+	height: 34px;
+	// @include border-radius(18px);
+	border: 0;
+	// background-color: transparent;
+	color: #8A00FF;
+	font-family: Trebuchet MS;
+	font-size: 12px;
+	padding: 0;
+	margin-top: 0;
+	margin-left: 294px;
+
+	.combo_box_departamento{
+		font-family: Trebuchet MS;
+		font-size: 12px;	
+		@include comboBox($ancho:234px,
+						  $alto:29px,
+						  $color_texto:#8A00FF,
+						  $imagen_fondo:"");
+		float: left;
+		height: 29px;
+		margin-top: 0px;
+		padding-top: 0;
+		select{
+			height: 29px;
+		}
+	}
+	.combo_box_ciudad{
+		font-family: Trebuchet MS;
+		font-size: 12px;	
+		@include comboBox($ancho:223px,
+						  $alto:29px,
+						  $color_texto:#8A00FF,
+						  $imagen_fondo:"");
+		float: right;
+		height: 29px;
+		margin-top: 0px;
+		padding-top: 0;
+		select{
+			height: 29px;
+		}
+		
+	}
+}
+
+/*------------------------- Campos departamento y ciudad --------------------*/
+
+
+/*------------------------- Campos Fecha --------------------*/
+.fecha_documento{
+	width: 449px;
+	height: 62px;
+	// background-color: $color_prueba;
+	position: relative;
+	margin-top: 0px;
+	margin-left: 432px;
+
+
+	.combo_box_dia
+{		font-family: Trebuchet MS;
+		font-size: 12px;	
+		@include comboBox($ancho:141px,
+						  $alto:48px,
+						  $color_texto:#8A00FF,
+						  $imagen_fondo:"");
+		float: left;
+		margin-top: 7px;
+		select{
+			height: 41px;
+		}
+	}
+	.combo_box_mes{
+		font-family: Trebuchet MS;
+		font-size: 12px;	
+		@include comboBox($ancho:141px,
+						  $alto:48px,
+						  $color_texto:#8A00FF,
+						  $imagen_fondo:"");
+		float: left;
+		margin-left: 13px;
+		margin-top: 7px;
+		select{
+			height: 41px;
+		}
+
+	}
+	.combo_box_ano{
+		font-family: Trebuchet MS;
+		font-size: 12px;	
+		@include comboBox($ancho:139px,
+						  $alto:48px,
+						  $color_texto:#8A00FF,
+						  $imagen_fondo:"");
+		float: left;
+		margin-left: 15px;
+		margin-top: 7px;
+		select{
+			height: 41px;
+		}
+
+	}
+}
+	
+
+/*------------------------- Campos Fecha --------------------*/
+
+
+	
+
+.fondoPreguntas{
+	input[type="text"] {
+		position: relative;
+		// margin-left: 184px;
+		// margin-top: 54px;
+		width: 402px;
+		padding-left: 20px;
+		padding-right: 20px;
+		height: 60px;
+		// @include border-radius(18px);
+		border: 0;
+		background-color: transparent;
+		color: #8A00FF;
+		font-family: Trebuchet MS;
+		font-size: 18px;	
+	}
+}
+
+
+.productosNosotrasDurante{
+	margin-top: 10px;
+	margin-left: 435px;
+}
+
+
+.productosNosotrasDespues{
+	margin-top: 10px;
+	margin-left: 435px;
+}
+
+.productosNosotrasDonde{
+	margin-top: 3px;
+	margin-left: 434px;
+	height: 42px!important;
+}
+.quienCompraTampones{
+	position: relative;
+	width: 422px;
+	height: 60px;
+	// background-color: $color_prueba;
+	margin-top: 21px;
+	margin-left: 435px;
+}
+
+
+.quienCompraTampones input:nth-child(1){
+	margin-top: 1px;
+	margin-left: 25px;
+	float: left;
+}
+
+.quienCompraTampones input:nth-child(2){
+	margin-top: 1px;
+	margin-left: 138px;
+	float: left;
+}
+
+.quienCompraTampones input:nth-child(3){
+	margin-top: 20px;
+	margin-left: 25px;
+	float: left;
+	clear: both;
+}
+
+.quienCompraTampones input:nth-child(4){
+	margin-top: 20px;
+	margin-left: 139px;
+	float: left;
+}
+
+.quienCompraTampones input:nth-child(5){
+	margin-top: 20px;
+	margin-left: 123px;
+	float: left;
+}
+
+
+.dondeComprasProductos{
+	position: relative;
+	width: 422px;
+	height: 60px;
+	// background-color: $color_prueba;
+	margin-top: 21px;
+	margin-left: 435px;
+}
+
+.dondeComprasProductos input:nth-child(1){
+	margin-top: 1px;
+	margin-left: 25px;
+	float: left;
+
+}
+
+.dondeComprasProductos input:nth-child(2){
+	margin-top: 1px;
+	margin-left: 138px;
+	float: left;
+}
+
+.dondeComprasProductos input:nth-child(3){
+	margin-top: 20px;
+	margin-left: 25px;
+	float: left;
+	clear: both;
+}
+
+.dondeComprasProductos input:nth-child(4){
+	margin-top: 20px;
+	margin-left: 139px;
+	float: left;
+}
+
+
+
+.auroizasWrap{
+	position: absolute;
+	width: 102px;
+	height: 32px;
+	// background-color: rgba(1,100,200,.5);
+	top: 102px;
+	left: 379px;
+}
+
+.auroizasWrap input:nth-child(1){
+	margin-top: 4px;
+	margin-left: 14px;
+	float: left;
+
+}
+
+.auroizasWrap input:nth-child(2){
+	margin-top: 4px;
+	margin-left: 56px;
+	float: left;
+}
+
+input:-moz-read-only { /* For Firefox */
+    background-color: white !important;
+    opacity: 0.8;
+}
+
+input:read-only { 
+    background-color: white !important;
+    opacity: 0.8;
+}
+
+/*------------------------- Campos formulario --------------------*/

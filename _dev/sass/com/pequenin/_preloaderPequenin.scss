@@ -1,0 +1,89 @@
+#preloader{
+    // width: 100%;
+    // height: 100%;
+    // background-color: #002d60;
+    // position: fixed;
+    // top: 0;
+    // left: 0;
+    // z-index: 999999;
+    width: 810px;
+    height: 602px;
+    background-color: #002d60;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+#divBarProgressContainer{
+    width: 400px;
+    height: 20px;
+    position: absolute;
+    border:solid #002d60 6px;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+
+    left: 50%;
+    top:80%;
+    margin-left: -220px;
+    margin-top: 0px;
+
+}
+#divBarProgress{
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+    width: 0px;
+    height: 20px;
+    position: absolute;
+    background-color:#00c7ff;
+    top:0px;
+    left:0px;
+}
+
+#pPerc{
+    position: absolute;
+    /*font-weight: bold;*/
+    width: 400px;
+    text-align: center;
+    color:white;
+    font-family: pequeninregular;
+    // margin-top: -1px;
+    margin-top: -3px;
+}
+
+#preloaderImage{
+  background-image: image-url('loader.png');
+  width: 650px;
+  height: 679px;
+  position: absolute;
+  top: -84.5px;
+  left:75px;
+
+}
+
+#status {
+position: absolute;
+left: 50%;
+top: 50%;
+width: 800px;
+height: 570px;
+margin-left: -400px;
+margin-top: -275px;
+}
+
+
+@media (max-width: 500px) {
+    #divBarProgressContainer{
+        border: 0;
+    }
+
+    #divBarProgress{
+        display: none;
+    }
+}

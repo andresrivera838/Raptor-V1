@@ -1,0 +1,153 @@
+.popupsClass{
+    display: none;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: $color_black_opacity;
+    width: 100%;
+    overflow: hidden;
+    z-index: 1000;
+    }
+.popupWrap{
+    position: relative;
+    max-width: 609px;
+    width: 90%;
+    margin: 90px auto;
+    height: auto;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 15px;
+    font-size: 16px;
+    background: $color_pink url('../img/fondo_militar.png');
+    color: white;
+    min-height: 17em;
+    &Materials{
+        &Left{
+            left: -11.5em;
+            top: -1em;
+            position: absolute;
+            width: 280px;
+            height: 563px;
+            background: url('../img/challenge_4/lb/materiales-left.png');
+            }
+        &Right{
+            right: -11.5em;
+            top: -1em;
+            position: absolute;
+            width: 280px;
+            height: 563px;
+            background: url('../img/challenge_4/lb/materiales-right.png');
+            }
+    }
+    &Btn {
+        width: 10em;
+        height: 4em;
+        background: url("../img/challenge_4/lb/btn-videos.png") no-repeat;
+        background-size: contain;
+        position: absolute;
+        &:hover {
+            cursor: pointer;
+            background: url("../img/challenge_4/lb/btn-videos-hover.png") no-repeat;
+            background-size: contain ;
+            }
+    }
+    &P {
+        font-family: 'my_creative';
+        position: relative;
+        font-size: 1.1em;
+        &Last{
+            text-align: center;
+            margin: 2em 0em 2em 0em;
+            & strong {
+                color: $color_yellow;
+                }
+        }
+    }
+    &Blue {
+        position: absolute;
+        width: 105%;
+        height: 1em;
+        background: $color_cyan url('../img/fondo_militar.png');
+        /*background-size: contain*/
+        left: -0.5em;
+        top: -0.3em ;
+        }
+    &Purple {
+        position: absolute;
+        width: 105%;
+        height: 2em;
+        background: $color_purple url('../img/fondo_militar.png');
+        /*background-size: contain*/
+        left: -0.5em;
+        top: 0.7em ;
+        }
+    &closeBtnLb{
+        position: absolute;
+        top: 0;
+        right: 0;
+        border: solid 3px white;
+        padding: 0.2em 0.5em 0.2em 0.5em;
+        border-radius: 1em;
+        }
+    &LogoNol{
+        background: url('../img/logo_nol.png');
+        position: absolute;
+        width: 117px;
+        height: 61px;
+        bottom: 0;
+        right: 0;
+        }
+}
+.slick-prev, .slick-next  {
+   width: 30px;
+   height: 30px;
+   position: absolute;
+   top: 50%;
+   margin-top: -15px;
+   background-color: #A4CC11;
+   cursor: pointer;
+   padding: 0px;
+   font-family: 'gotham_blackregular';
+   z-index: 10;
+   color: transparent;
+   border: none;
+   &:active, &:focus {
+       outline: none;
+   }
+}
+
+.slick-prev {
+   left: 10px;
+   background: url('../img/arrow_left.png');
+   background-size: contain;
+   background-position: center;
+   background-repeat: no-repeat;
+   height: 30px;
+   // &:hover{
+   //     background: url('../img/arrow_left.png');
+   //     background-size: contain;
+   //     background-repeat: no-repeat;
+   // }
+}
+
+.slick-next {
+   right: 10px;
+   background: url('../img/arrow_right.png');
+   background-size: contain;
+   background-repeat: no-repeat;
+   background-position: center;
+
+   // &:hover{
+   //     background: url('../img/arrow_right.png');
+   //     background-size: contain;
+   //     background-repeat: no-repeat;
+   // }
+}
+
+.slick-slide img {
+   display: initial;
+}
+
+.slick-initialized .slick-slide {
+   overflow: hidden;
+}

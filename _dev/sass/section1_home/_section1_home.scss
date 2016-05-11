@@ -1,0 +1,168 @@
+.section1Home{
+  &Background {
+    width: 100%;
+    height: auto;
+    background: url('../img/sectionOneHome/bg-section-one.png') no-repeat center center fixed;
+    -webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+    &Padding {
+      padding-top: 10em;
+    }
+  }
+}
+
+.container {
+    &Transparent {
+      width: 100%;
+      height: 100px;
+    }
+    &Titleimg {
+      width: 100%;
+      height: auto;
+      margin-top: 1em;
+      max-width: 300px;
+      margin: 10px auto 0px;
+      display: block;
+    }
+    &Bienbenida {
+      text-align: center;
+      font-size: 2em;
+      color: $color_yellow;
+      font-family: 'my_creative';
+    }
+    &P {
+      text-align: justify;
+      font-size: 0.9em;
+      color: $color_white;
+      & strong {
+        color: $color_yellow;
+        font-size: 1.1em;
+      }
+    }
+    &Div {
+      text-align: right;
+      position: relative;
+    }
+    &Btn {
+      position: absolute;
+      width: 35%;
+      right: 0;
+      top: 0;
+      max-width: 200px;
+    }
+    &Ipad {
+      width: 100%;
+      height: auto;
+
+    }
+    &Login {
+      width: 100%;
+      height: 100%;
+      /*max-height: 350px;*/
+      max-width: 280px;
+      background: #16cfde url('../img/sectionOneHome/bg-login-home-sectionone.png') no-repeat center center;
+      border-radius: 13px;
+      text-align: center;
+      /* max-width: 277px; */
+      margin: 0 auto;
+      padding: 0.5em;
+      margin-bottom: 2em;
+      &Border {
+        position: relative;
+        border: dotted 2px $color_white;
+        padding: 1em;
+        border-radius: 13px;
+        &Img {
+          width: 100%;
+        }
+      }
+      &Title {
+        padding-top: 0.5em;
+        text-align: center;
+        &One {
+          text-align: center;
+          color: $color_pink;
+          font-family: 'my_creative';
+          font-size: 2em;
+          line-height: 0.8;
+          &Strong {
+            font-size: 20px;
+            color: $color_white;
+          }
+        }
+      }
+      &Input {
+        position: relative;
+        &IconEmail {
+          position: absolute;
+          width: 16px;
+          height: 16px;
+          background: url("../img/sectionOneHome/input-user.png");
+          top: 2em;
+          left: 2em;
+        }
+        &IconPassword {
+          position: absolute;
+          width: 16px;
+          height: 16px;
+          background: url("../img/sectionOneHome/input-key.png");
+          top: 1em;
+          left: 2em;
+        }
+        &Email {
+          margin-top: 1em;
+          margin-bottom: 1em;
+          padding: 1em;
+          border-radius: 10px;
+          width: 90%;
+          border: 0px;
+          padding-left: 3em;
+        }
+        &Password {
+          margin-bottom: 1em;
+          padding: 1em;
+          border-radius: 10px;
+          width: 90%;
+          border: 0px;
+          padding-left: 3em;
+        }
+      }
+      &Btn {
+        width: 100%;
+        height: auto;
+        padding-bottom: 0.5em;
+        position: relative;
+        & img {
+          width: 100%;
+        }
+        & span {
+          position: absolute;
+          left: 1.6em;
+          top: 0.4em;
+          color: #ffffff;
+          font-family: 'my_creative';
+          font-size: 2em;
+        }
+      }
+      &Footer {
+        & ul {
+          margin: 0 auto;
+          padding: 0;
+          & li {
+            list-style:none;
+            display: inline;
+          }
+        }
+        &Text {
+          color: $color_white;
+          text-decoration: underline;
+        }
+      }
+    }
+}
+
+p {
+  margin: 0.3em 0;
+}

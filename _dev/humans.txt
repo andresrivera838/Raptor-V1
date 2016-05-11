@@ -1,0 +1,16 @@
+# TEAM
+	Front-end: Cesar Hurtado
+	Contact: cahz25@gmail.com
+	From: Medellin, Antioquia, Colombia
+
+	Front-end: Ameva
+	Contact: afmeva@gmail.com
+	From: Tulua, Valle del Cauca Colombia
+
+	Front-end: Jose Alcaraz
+	Contact: jose.alcaraz@pragma.com.co 
+	From: Medellin, Antioquia, Colombia
+
+# TECHNOLOGIES
+	CSS3, HTML5, Javascript
+    Grunt, HTML5 Boilerplate, Compass

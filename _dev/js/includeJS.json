@@ -1,0 +1,20 @@
+{
+	"includes":[
+        "_dev/js/com/.pre",
+  			"_dev/js/com/basicos/constantes.js",
+  			"_dev/js/com/datos/_analytics.class.js",
+  			"_dev/js/com/basicos/_serviceHandler.class.js",
+  			"_dev/js/com/datos/_user.class.js",
+        "_dev/js/com/datos/_userAPP.class.js",
+        "_dev/js/com/datos/_servicesSOAP.class.js",
+        "_dev/js/com/canvas/**/*.js",
+        "_dev/js/com/media/preloader.class.js",
+  			"_dev/js/com/media/_toast.class.js",
+  			"_dev/js/com/nav/*.js",
+        "_dev/js/com/util/*.js",
+        "_dev/js/com/setup.js",
+        "_dev/js/distGame.js",
+		  	"_dev/js/main.js",
+        "_dev/js/com/.post"
+	]
+}

@@ -1,0 +1,143 @@
+.txtSiguenos{
+  font-family: "MyriadPro-Regular";
+  font-size:2.5em;
+  color:#FFFFFF;
+}
+
+.bkgSeccion3home{
+  position:relative;
+
+  h1{
+    font-size: 2.5vw;
+    font-family: 'my_creative';
+    margin: 0.2em 0;
+  }
+}
+
+.txtDesafio{
+  background: url('../img/corazonFlecha.png') no-repeat;
+  padding-left:60px;
+  font-family: "my_creative";
+  font-size:1.5em;
+  color:#FFFFFF;
+  margin:0;
+}
+
+.pBig{
+  margin: 0.5em 0;
+  font-size:1.4vw;
+}
+
+.celulares{
+  width:70%;
+  margin: 0 auto;
+}
+
+.pSmall{
+  font-size:1vw;
+}
+
+.pMedium{
+  font-size:1.2vw;
+}
+
+.titulo{
+    width:80%;
+    float:right;
+    position: relative;
+    h1 {
+        color: #fff;
+        text-align: center;
+        font-size: 1.5em;
+        font-family: 'my_creative';
+    }
+}
+
+
+.white{
+  color:#FFFFFF;
+}
+
+.limeGreen{
+  color:#cdf300;
+}
+
+.textCenter{
+  text-align:center;
+}
+
+.textRight{
+  text-align:right;
+}
+
+.bckPink {
+    background-color: #FF0092;
+}
+.bckBlue {
+    background-color: #1bcddc;
+}
+
+
+
+.classWithPad{
+  margin:10px; padding:10px;
+}
+
+.objLeft {
+	width: 250px;
+  height: 450px;
+  position: absolute;
+  top: 80px;
+  left: -10px;
+
+  img{
+    width:80%;
+  }
+}
+
+.objRight {
+	width: 270px;
+  height: 450px;
+  position: absolute;
+  top: 0px;
+  right: -15px;
+  float:right;
+
+  img{
+    width:80%;
+  }
+}
+
+.section3Home{
+  background: #6706C4 url("../img/fondo_militar.png");
+  text-align: center;
+  padding-top: 100px;
+}
+
+.btnComenzarYa{
+  background-image: url("../img/btn_ComenzarYa.png");
+  background-size:contain;
+  background-repeat:no-repeat;
+}
+
+.borderBottom{
+  margin-top:-20px;
+}
+
+.subTitle{
+  margin-right:100px;
+  height: 110px;
+}
+
+.btnComenzarYa{
+  height:80px;
+  background-position: center;
+}
+
+.screenCelular{
+  width:80%;
+  height:79%;
+  position:absolute;
+  left:10%;
+  top:16%;
+}

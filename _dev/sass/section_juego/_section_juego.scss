@@ -1,0 +1,285 @@
+.sectionJuego{
+	display: none;
+}
+
+#gameDiv{
+	height: 100%;
+	max-height: 822px;
+	width: 100%;
+	display: none;
+	overflow: hidden;
+	// background: #5dffff;
+	// background: url('../img/fondo_juego.jpg');
+	background-size: contain;
+	margin-bottom: -12px;
+	position: relative;
+	// overflow: hidden;
+	// background-size: contain;
+	.contenedorGame {
+		width: 100%;
+		max-width: 1024px;
+		margin: 0 auto;
+		height: 100%;
+	}
+}
+
+#gameDivCont{
+	height: 100%;
+	max-height: 822px;
+	width: 60%;
+	margin-bottom: -12px;
+	float: right;
+	position: relative;
+	right: 5%;
+	max-width: 550px;
+	background-color: #00F9FF;
+	&:after {
+		content: "";
+		position: absolute;
+		right: -20px;
+		width: 22px;
+		width: 6%;
+		background: url('../img/border_left.png');
+		height: 100%;
+		top: 0;
+		background-size: contain;
+	    background-repeat-x: no-repeat;
+	}
+	&:before {
+		content: "";
+	    position: absolute;
+	    left: -20px;
+	    // max-width: 22px;
+	    width: 6%;
+	    background: url("../img/border_right.png");
+	    height: 100%;
+	    top: 0;
+	    background-size: contain;
+	    background-repeat-x: no-repeat;
+	}
+}
+
+
+.leftWrapper {
+	float: left;
+	position: relative;
+	top: 0;
+	width: 40%;
+	height: 100%;
+}
+
+.logoGame img {
+    margin: 0 auto;
+    display: block;
+    width: 70%;
+    max-width: 400px;
+}
+
+.sectionGameTxt {
+	color: #e20082;
+	text-align: center;
+	font-size: 20px;
+	line-height: 1;
+	font-family: 'gotham_blackregular';
+    margin: 0 auto;
+}
+
+.sectionGameTxt .loguitoNosotras {
+	display: inline-block;
+    width: 45px;
+    height: 37px;
+    background: url("../img/loguito_nosotras.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-bottom: -9px;
+    left: -7px;
+    position: relative;
+}
+
+.btnYellow {
+
+	font-size: 23px;
+    color: #3C0F7C;
+    background: #DCFF00;
+   	display: table;
+   	width: 100%;
+   	max-width: 90px;
+    text-align: center;
+    height: 40px;
+    line-height: 41px;
+    margin: 10px auto;
+    position: relative;
+    z-index: 10;
+    font-family: 'hero-regular';
+    font-weight: bold;
+    top: 5px;
+    box-shadow: 2px 2px 7px 1px rgba(0, 0, 0, 0.3);
+	p {
+		margin: 0px;
+		width: 100%;
+	}
+	&:before{
+		content: "";
+	    background: url("../img/cinta_left.png");
+	    background-repeat: no-repeat;
+	    background-size: contain;
+	    position: absolute;
+	    height: 32px;
+	    width: 21px;
+	    left: -9px;
+	    top: 50%;
+	    margin-top: -17px;
+	}
+	&:after{
+		content: "";
+	    background: url("../img/cinta_right.png");
+	    background-repeat: no-repeat;
+	    background-size: contain;
+	    position: absolute;
+	    height: 32px;
+	    width: 21px;
+	    right: -9px;
+	    top: 50%;
+	    margin-top: -17px;
+	}
+	&:hover {
+		background: #3C0F7C;
+		color: white;
+	}
+}
+
+.puntosAcumulados {
+	width: 184px;
+    height: 69px;
+    background: url("../img/ui/img_puntosacum.png");
+    position: relative;
+    margin: 0 auto;
+    padding: 19px 17px 20px 60px;
+    font-size: 23px;
+    color: white;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin-bottom: 20px;
+    z-index: 10;
+}
+
+.btnSalirJuego {
+	cursor: pointer;
+}
+
+.millasAcumWrap {
+	width: 185px;
+	margin: 0 auto;
+}
+
+.leftContaier {
+	width: 315px;
+	margin: 0 auto;
+	position: relative;
+	font-family: 'robotoregular';
+}
+
+.marImage {
+	position: absolute;
+    bottom: 0;
+    width: 240px;
+    height: 43%;
+    background: url("../img/game_mar.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    left: 50%;
+    margin-left: -80px;
+}
+
+
+.tiempoContainer, .puntajeContainer {
+	text-align: center;
+	font-size: 25px;
+	margin: 15px 0px;
+	p {
+		margin: 0;
+	}
+}
+
+.cyanContGame {
+	background: #00F9FF;
+    display: table;
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0px 5px;
+    font-size: 20px;
+    color: #3C0F7C;
+    box-shadow: 2px 2px 7px 1px rgba(0, 0, 0, 0.3);
+}
+
+.gameTimeNum {
+    background: #DCFF00;
+    padding: 5px;
+    margin: 7px auto;
+    width: 40px;
+    display: block;
+    box-shadow: 2px 2px 7px 1px rgba(0, 0, 0, 0.3);
+}
+
+.gameScoreNum {
+    background: white;
+    padding: 5px;
+    margin: 7px auto;
+  	display: table;
+    box-shadow: 2px 2px 7px 1px rgba(0, 0, 0, 0.3);
+}
+
+.imgHeaderGame {
+	background: url("../img/patron_header.jpg");
+	position: absolute;
+	height: 114px;
+	width: 100%;
+	top: 0; 
+	left: 0;
+	z-index: -1;
+	&:after {
+		content: "";
+		position: absolute;
+		top: 114px;
+		background: url("../img/before_header.png");
+		height: 55px;
+		width: 100%;
+	}
+}
+
+.logoGame {
+    position: relative;
+    margin-top: 35px;
+}
+
+.backTampon {
+	position: absolute;
+	background: url("../img/obj_tampon.png");
+	left: 2px;
+	top: 50%;
+	width: 94px;
+	height: 161px;
+	z-index: -1;
+}
+
+.backFlotador {
+	position: absolute;
+	background: url("../img/back_flotador.png");
+	right: -25px;
+    bottom: -28%;
+    width: 90px;
+    height: 93px;
+    z-index: -1;
+}
+
+.backHojita {
+	position: absolute;
+	background: url("../img/back_hojita.png");
+	right: -35px;
+    top: 5%;
+    width: 65px;
+    height: 49px;
+    z-index: -1;
+}

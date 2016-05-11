@@ -1,0 +1,35 @@
+.condiciones{
+	display: none;
+	background:image-url("bkg_condiciones.png") no-repeat;
+	width:766px;
+	height: 382px;
+	margin: 103px auto;
+}
+.contenedor_con_scroll{
+	position: relative;
+	top: 130px;
+	left: 90px;
+	width: 570px;
+	height: 175px;
+	overflow: auto;	
+}
+ol { list-style: none; padding-left: 10px; text-indent:0px; margin-left:5px;}
+ol li {color:$color_texto_condiciones;}
+ol li:first-letter,
+.contenedor_con_scroll li span.color_verde {color:$color_numero_condiciones; padding-right:5px; margin-left:-15px;}
+.contenedor_con_scroll li
+{
+	list-style-position: inside;
+	margin-bottom: 15px;
+	padding-left: 25px;	
+}
+.texto_condiciones{	
+	font-family:kefa;
+	font-size:16px;
+	line-height: 16px;
+	text-align: center;
+	color: #fff;
+}
+.texto_condiciones span{
+	color: #D3E536;
+}

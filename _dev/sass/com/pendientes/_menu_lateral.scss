@@ -1,0 +1,12 @@
+@import "compass/css3";
+
+// @include border-radius(17px);
+// @include contenedorPrincipal($ancho:808px,$alto:465px,$mt:8px);
+// @include transform(scale(.7) !important); //-webkit-transform: scale(.7);
+@for $i from 1 through 10{
+	.item_juego:nth-child(#{$i}){
+		@include pa($top:(($i - 1)*47px),$left:10px,$bkg:"seleccion_producto.png");
+		display: block;
+		background-position: 3px -49px;
+	}	
+}
