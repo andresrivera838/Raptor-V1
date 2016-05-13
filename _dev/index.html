@@ -7,10 +7,23 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <title>My App</title>
     <!-- Path to Framework7 Library CSS-->
-    <link rel="stylesheet" href="css/vendor/framework7.ios.min.css">
-    <link rel="stylesheet" href="css/vendor/framework7.ios.colors.min.css">
-    <!-- Path to your custom app styles-->
+    
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css css/vendor/bootstrap.min.css -->
+    <!-- endbuild -->
+      <!-- build:css css/vendor/jquery-ui.min.css -->
+    <!-- endbuild -->
+    <!-- build:css css/main.min.css -->
+    <!-- injector:css -->
+    <link rel="stylesheet" href="css/vendor/framework7.material.min.css">
+    <link rel="stylesheet" href="css/vendor/framework7.material.colors.min.css">
     <link rel="stylesheet" href="css/vendor/my-app.css">
+    <link rel="stylesheet" href="css/main.css">
+    <!-- endinjector -->
+    <!-- endbuild -->
+    
+    <!-- Path to your custom app styles-->
+    
   </head>
   <body>
     <!-- Status bar overlay for fullscreen mode-->
@@ -89,15 +102,29 @@
             </div>
           </div>
         </div>
+        
         <!-- Bottom Toolbar-->
         <div class="toolbar">
-          <div class="toolbar-inner"><a href="#" class="link">Link 1</a><a href="#" class="link">Link 2</a></div>
+          <div class="toolbar-inner"><a href="#" class="pruebaBtn link">Link 1</a><a href="#" class="link">Link 4</a></div>
         </div>
       </div>
     </div>
+    
     <!-- Path to Framework7 Library JS-->
+    
+    <!-- build:js js/vendor.min.js -->
+    <!-- injector:js -->
     <script type="text/javascript" src="js/vendor/framework7.min.js"></script>
-    <!-- Path to your app js-->
     <script type="text/javascript" src="js/vendor/my-app.js"></script>
+    <script src="js/vendor/jquery-1.7.2.min.js"></script>
+    <script src="js/vendor/jquery-ui.min.js"></script>
+    <!-- endinjector -->
+    <!-- endbuild -->
+    <!-- build:js js/minions.min.js -->
+    <script type="text/javascript" src="js/minions.js"></script>
+    <!-- endbuild -->
+    
+    <!-- Path to your app js-->
+    
   </body>
 </html>
