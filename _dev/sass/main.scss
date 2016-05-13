@@ -1,5 +1,5 @@
 /*------------------------- Plantilla reset estilos --------------------*/
-@import "com/general/reset_estilos";
+
 /*------------------------- Plantilla reset estilos --------------------*/
 
 /* ==========================================================================
@@ -19,26 +19,9 @@
    ========================================================================== */
 
 @import "compass";
-@import "com/general/normalize";
-@import "com/general/variables";
-@import "com/general/sprites";
-@import "com/general/jquery.mCustomScrollbar.mod";
-@import "com/general/fuentes";
-@import "com/general/utilidades";
-@import "com/vendor/fontawesome/font-awesome";
-@import "com/vendor/slick";
 
 @import "generales";
-@import "header/header";
-@import "section1_home/section1_home";
-@import "section2_home/section2_home";
-@import "section3_home/section3_home";
-@import "section4_home/section4_home";
-@import "section_juego/section_juego";
-@import "toast/toast";
-@import "popups/popups";
 @import "medias";
 /*------------------------- Plantillas media queries helper classes --------------------*/
-@import "com/general/media_queries";
-@import "com/general/helper_classes";
+
 /*------------------------- Plantillas media queries helper classes --------------------*/
