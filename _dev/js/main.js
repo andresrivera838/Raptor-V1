@@ -1,38 +1,17 @@
 var ref = {};
-var whereCallLogin = '';
-var flagIniSlick = true;
-var flagIniSlick2 = true;
-var flagIniSlick3 = true;
-var reloadGame = false;
-var numOportunidad = 0;
-var userKey = 0;
-var positionSlide = 0;
-
+var myApp = new Framework7(); 
+var $$ = Dom7;
 
 /********************************
     constantes
 *********************************/
-// var URL_APP = 'http://www.nosotrasonline.com.co/eventos/colombia/2015/septiembre/frescuraextrema/';
-// var URL_APP = 'http://54.174.23.51/eventos/colombia/2015/septiembre/frescuraextrema/';
-// var HOSTNAME = 'http://www.nosotrasonline.com.co';
-var HOSTNAME = 'http://54.174.23.51';
+
+var HOSTNAME = 'https://raptor-speakerblack.c9users.io/';
 
 var generalServiceSetup = {
-
-   nombreJuego: 'frescuraExtrema',
-   url: HOSTNAME + '/Plantillas/NOL/ServiciosWeb/ServicioWebReusables.asmx',
-   urlJuego: HOSTNAME + '/Plantillas/NOL/ServiciosWeb/ServicioJuegoGeneral.asmx',
-   urlTampones: HOSTNAME + '/Plantillas/NOL/ServiciosWeb/ServicioTampones2016.asmx',
-   paisCMS: 45,
-   paisCRM: 1, /*para Colombia*/
-   idGame: 4,
-   // idMotivoGame: 5892, /*calidad*/
-   idMotivoGame: 7532, /*produccion*/
-   idPaisLog: 1, /*para Colombia*/
-   cantidadTop: 35
+   urlReusables: HOSTNAME + 'server/post/track/'
 };
 
-var actividadAnalytics = 'RetoClavesTamponesColombia2015';
 /********************************
     fin constantes
 *********************************/
@@ -40,8 +19,8 @@ var actividadAnalytics = 'RetoClavesTamponesColombia2015';
 /*************** Mensajes Error Exito **************************/
 var errorMsg = {
     login: {
-        error1:"¡Algo no está bien! Ingresa de nuevo tus datos o regístrate para poder participar.",
-        error2:"Lo sentimos, esta actividad es solo para usuarias de Colombia"
+        error1:"¡Algo nos hace falta! Ingresa de nuevo tus datos o regístrate en NosotrasOnline.com para poder participar.",
+        error2:"Lo sentimos, esta actividad es solo para usuarias de Republica Dominicana"
     },
     claves: {
         exito: '¡Todo un éxitooo! Puedes descontar puntos de tu cuenta de NosotrasOnline para jugar.',
@@ -49,134 +28,136 @@ var errorMsg = {
         error2: '¡Ups! la clave no es válida. Vuelve a ingresarla sin puntos, comas, guiones ni espacios.',
         error3: '¡Ups! la clave que ingresaste no es válida, inténtalo de nuevo ingresando una clave de Tampones.'
     },
-    finactividad: {
-        error1: 'Tu Reto Tampones llegó a su fin. ¡Prepárate para conocer a las ganadoras!'
+    tiquete: {
+        exito: '¡¡¡YA PUEDES JUGAAAR!!!Descontamos 10 puntos de tu cuenta de NosotrasOnline para entregarte 1 ENTRADA a esteincreíble juego. ¡Entra, diviértete y gana para mamá!',
+        error1: '¡¡¡NO PUEDES JUGAR!!! Ingresa más claves de tus productos'
+        // error2: '¡Gracias por jugar y divertirte en nombre de mamá en esta feria! Pronto descubrirás si eres una de las ganadoras.'
     }
 };
 /*************** Mensajes Error Exito **************************/
 
-var _ga ={};
-
-
-
-
-
 function events(){
     
-    $('.pruebaBtn').on('click', function(){
-        alert("ssss");
+  
+    var myApp = new Framework7({
+        pushState: true,
+        swipePanel: 'left',
+        material: true
+        // ... other parameters
     });
-
+    
+    
+    $$('#searchPista').on('click', function(){
+        $('.containPistas').empty();
+        var pista =  $('.searchM').val();
+        getPista({
+            parameter: pista
+        });
+    });
+    
+    var playing = false;
+    
+ 
+    
+ 
+    $('.algo').on('click', function() {
+        alert("s");
+        /*$(this).toggleClass("down");
+        
+        console.log($(this).parents());
+ 
+        if (playing == false) {
+            document.getElementById('player0').play();
+            playing = true;
+            $(this).text("Parar Sonido");
+ 
+        } else {
+            document.getElementById('player0').pause();
+            playing = false;
+            $(this).text("Reiniciar Sonido");
+        }*/
+    });
+    
+    var playing = false;
+    var PistaA;
+        
+    $(".card").on("click", ".playVideo", function(){
+        
+        
+        var padre = $(this).parents('.card');
+        var id = $(padre).attr('id');
+        
+        $(this).toggleClass("down");
+ 
+        if (playing == false) {
+            
+            if(PistaA){
+                document.getElementById(PistaA).pause();
+            }
+            var idPista = $('#'+id+' .player').attr('id');
+            document.getElementById(idPista).play();
+            playing = true;
+            PistaA = idPista;
+            //$(this).text("Parar Sonido");
+ 
+        } else {
+            var idPista = $('#'+id+' .player').attr('id');
+            document.getElementById(idPista).pause();
+            playing = false;
+            //$(this).text("Reiniciar Sonido");
+        }
+    });
 };
 
-
-
-function getLogin(p_obj) {
+function getPista(p_obj) {
     
-    ref.userOtroPais = false;
-
-    var result = Soap.inicioSesion({
-        'usuario': p_obj.usuario,
-        'clave': p_obj.clave,
+    $.ajax({
+		data: {query: p_obj.parameter},
+		type: "POST",
+		url:  generalServiceSetup.urlReusables + "search",
+	})
+	
+    .done(function( data, textStatus, jqXHR ) {
+            
+            var datos = $.parseJSON(data);	
+             
+            console.log(datos);
+            
+            $.each(datos.data.data, function(i,item){
+    			var newPageContent = '<div id="searchPt'+i+'" class="card demo-card-header-pic">'+
+    			                        '<audio class="player" id="playerVideo'+i+'" src="'+ datos.data.data[i].preview +'"> </audio>'+
+                                        '<div style="background-image:url('+ datos.data.data[i].album.cover_medium +')" '+
+                                        ' valign="bottom" class="card-header color-white no-border playVideo">'+ datos.data.data[i].title +'</div>'+
+                                        '<div class="card-con tent">'+
+                                          '<div class="card-content-inner">'+
+                                            '<div class="divClear"></div>'+
+                                            '<div class="content-block">'+
+                                              '<div class="chip">'+
+                                                '<div class="chip-media"><img src="'+ datos.data.data[i].artist.picture_small +'"></div>'+
+                                                '<div class="chip-label">'+ datos.data.data[i].artist.name +'</div>'+
+                                              '</div>'+
+                                            '</div>'+
+                                            '<div class="divClear"></div>'+
+                                          '</div>'+
+                                        '</div>'+
+                                        '<div class="card-footer no-border">'+
+                                            '<a href="#" class="link">Like</a>'+
+                                            '<a href="#" class="link">Share</a>'+
+                                        '</div>'+
+                                    '</div>';
+               $('.containPistas').append(newPageContent);
+    		});
+    		events();
+    	                       
+    })
+    .fail(function( jqXHR, textStatus, errorThrown ) {
+    	    console.log(errorThrown);
     });
-
-    // console.log("login:");
-    // console.log(result);
-
-    if (!result.Error) {
-        var pais = result.Pais;
-        if(pais == generalServiceSetup.idPaisLog){
-            UserAPP.set(result);
-            return true;
-        }else if(pais == generalServiceSetup.idPaisLog2){
-            ref.userOtroPais = true;
-            window.open(generalServiceSetup.urlOtroPais2);
-            return false; 
-        }else if(pais == generalServiceSetup.idPaisLog3){
-            ref.userOtroPais = true;
-            window.open(generalServiceSetup.urlOtroPais3);
-            return false; 
-        }else if(pais == generalServiceSetup.idPaisLog4){
-            ref.userOtroPais = true;
-            window.open(generalServiceSetup.urlOtroPais4);
-            return false; 
-        }else{
-            ref.userOtroPais = true;
-            return false;
-        }  
-    } else {
-        ref.userOtroPais = false;
-        return false;
-    }
-}
-
-
-function setServices(){
-
-    Soap.register({
-        alias: 'inicioSesion',
-        name: 'IniciarSesion',
-        params: ['usuario', 'clave', 'usuarioClave', 'contrasenaClave'],
-        url: location.hostname == 'localhost' ? 'dummyServices/login.xml' : generalServiceSetup.url
-    });
-
-    Soap.register({
-        alias: 'top',
-        name: 'ObtenerTopJuego',
-        params: ['idJuego', 'cantidad', 'idPaisCRM'],
-        url: location.hostname == 'localhost' ? 'dummyServices/top.xml' : generalServiceSetup.urlJuego
-    });
-
-    Soap.register({
-        alias: 'comprarEntrada',
-        name: 'ComprarObjetoValorVariable',
-        params: ['idVisitante', 'idProducto', 'textoConfirmacion', 'valor', 'idPaisCMS'],
-        url: location.hostname == 'localhost' ? 'dummyServices/compra.xml' : generalServiceSetup.url
-    });
-
-    // Soap.register({
-    //     alias: 'guardarPartida',
-    //     name: 'GuardarPartida',
-    //     params: ['idUsuarioClave', 'idUsuario', 'idJuego', 'puntaje', 'vidas', 'idPaisCRM'],
-    //     url: location.hostname == 'localhost' ? 'dummyServices/guardarPartida.xml' : generalServiceSetup.urlJuego
-    // });
-
-    Soap.register({
-        alias: 'guardarPartida',
-        name: 'GuardarPartida',
-        params: ['idUsuarioClave', 'idUsuario', 'idJuego', 'puntaje', 'vidas', 'claveProducto', 'idPaisCRM', 'idPaisCMS', 'motivo'],
-        url: location.hostname == 'localhost' ? 'dummyServices/guardarPartida.xml' : generalServiceSetup.urlTampones
-    });
-
-    Soap.register({
-        alias: 'verificarClave',
-        name: 'VerificarClave',
-        params: ['idUsuario', 'claveProducto', 'idUsuarioClave', 'idPaisCMS', 'motivo'],
-        url: location.hostname == 'localhost' ? 'dummyServices/ingresoClaveNoRed.xml' : generalServiceSetup.urlTampones
-    });
-
-    Soap.register({
-        alias: 'obtenerPuntosTotales',
-        name: 'ObtenerEstado',
-        params: ['idUsuario', 'idJuego', 'idPaisCRM'],
-        url: location.hostname == 'localhost' ? 'dummyServices/totalPuntos.xml' : generalServiceSetup.urlJuego
-    });
-
-    Soap.register({
-        alias: 'ingresarClave',
-        name: 'IngresarClaveNoRedimible',
-        params: ['idUsuario', 'claveProducto', 'idUsuarioClave', 'idPaisCMS', 'motivo'],
-        url: location.hostname == 'localhost' ? 'dummyServices/ingresoClaveNoRed.xml' : generalServiceSetup.urlTampones
-    });
-
 }
 
 function init() {
 	events();
-	/*setServices();*/
-
-    //numOportunidad = 2;
-	// openGame();
-} 
+	// openGame();   
+}
 
 window.onload = init;
