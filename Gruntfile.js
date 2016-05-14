@@ -16,10 +16,6 @@ module.exports = function(grunt) {
         },
         pkg: grunt.file.readJSON('package.json'),
         concat: {
-            game:{
-                src: devPath + 'js/game/**/*.js',
-                dest: devPath + 'js/distGame.js'
-            },
             js: {
                 src: grunt.file.readJSON(jsIncludePath)['includes'],
                 dest: devPath + 'js/minions.js'
@@ -133,7 +129,43 @@ module.exports = function(grunt) {
                     {
                         cwd: devPath + 'css/',
                         expand: true,
-                        src: ['vendor/bootstrap.min.css'],
+                        src: ['vendor/framework7.ios.colors.min.css'],
+                        dest: buildPath + 'css/'
+                    }, 
+                    {
+                        cwd: devPath + 'css/',
+                        expand: true,
+                        src: ['vendor/framework7.ios.min.css'],
+                        dest: buildPath + 'css/'
+                    }, 
+                    {
+                        cwd: devPath + 'css/',
+                        expand: true,
+                        src: ['vendor/framework7.ios.rtl.min.css'],
+                        dest: buildPath + 'css/'
+                    },
+                    {
+                        cwd: devPath + 'css/',
+                        expand: true,
+                        src: ['vendor/framework7.material.colors.min.css'],
+                        dest: buildPath + 'css/'
+                    }, 
+                    {
+                        cwd: devPath + 'css/',
+                        expand: true,
+                        src: ['vendor/framework7.material.min.css'],
+                        dest: buildPath + 'css/'
+                    }, 
+                    {
+                        cwd: devPath + 'css/',
+                        expand: true,
+                        src: ['vendor/framework7.material.rtl.min.css'],
+                        dest: buildPath + 'css/'
+                    }, 
+                    {
+                        cwd: devPath + 'css/',
+                        expand: true,
+                        src: ['vendor/my-app.css'],
                         dest: buildPath + 'css/'
                     }, 
                     {
