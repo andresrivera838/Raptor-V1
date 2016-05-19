@@ -1,5 +1,44 @@
  .demo-card-header-pic .card-header {
     height: 40vw;
-    background-size: cover;
+    background-size: contain;
     background-position: center;
+  }
+  
+  .imgPlay {
+    width: 40px;
+    height: 40px;
+    background: url("img/ic_play_circle_outline_white_24px.svg");
+    background-size: contain;
+    display: inline-block;
+    position: relative;
+  }
+  
+  .imgPause {
+    width: 40px;
+    height: 40px;
+    background: url("img/ic_pause_circle_outline_white_24px.svg");
+    background-size: contain;
+    display: inline-block;
+    position: relative;
+  }
+  
+  .imgDownload {
+    width: 40px;
+    height: 40px;
+    background: url("img/ic_cloud_download_white_24px.svg");
+    background-size: contain;
+    display: inline-block;
+    position: relative;
+  }
+  
+  .searchbar {
+    display:-webkit-inline-box;
+  }
+  
+  .progressbarStyle {
+    display:none;
+  }
+  
+  .notifications {
+    background: #000;
   }

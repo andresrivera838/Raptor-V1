@@ -31,12 +31,6 @@
     <div class="statusbar-overlay"></div>
     <!-- Panels overlay-->
     <div class="panel-overlay"></div>
-    <!-- Left panel with reveal effect-->
-    <div class="panel panel-left panel-reveal">
-      <div class="content-block">
-        <p>Left panel content goes here</p>
-      </div>
-    </div>
     <!-- Right panel with cover effect-->
     <div class="panel panel-right panel-cover">
       <div class="content-block">
@@ -64,41 +58,39 @@
           <div data-page="index" class="page">
             <!-- Scrollable page content-->
             <div class="page-content">
-              <div class="content-block-title">Welcome To My Awesome App</div>
+              <div class="content-block-title"></div>
               
               <form data-search-list=".list-block-search" data-search-in=".item-title" class="searchbar searchbar-init">
                 <div class="searchbar-input">
                   <input type="search" class="searchM" placeholder="Search"><a href="#" class="searchbar-clear"></a>
                 </div>
-                <p class="buttons-row" id="searchPista">
-                  <a href="#" class="button button-raised button-fill color-pink">buscar</a>
-                </p>  
+                <a href="#"  id="searchPista" class="searchbar">Buscar</a>
               </form>
-            
+              <span class="progressbar-infinite"></span>
+              
+              
               <div class="row">
                 <div class="col-auto containPistas">
+                  
                   <div id="searchPt0" class="card demo-card-header-pic">
-                    <audio class="player" id="playerVideo0" src="http://cdn-preview-7.deezer.com/stream/7a8f0725618b7a21e10d9f30484720f9-5.mp3"> </audio>
-                    <div style="background-image:url(http://cdn-images.deezer.com/images/artist/ac944b5966934c96128a4acc777fd47c/500x500-000000-80-0-0.jpg)" class="card-header color-white no-border playVideo">No Role Modelz</div>
-                    <div class="card-content">
+                    <audio class="player" id="playerVideo0" src="http://cdn-preview-d.deezer.com/stream/d1e5bd8636f416d55d5374a7e48d2442-5.mp3"> </audio>
+                    <div style="background-image:url(http://cdn-images.deezer.com/images/cover/310af38a7929c064db6fa67270ad4575/250x250-000000-80-0-0.jpg)" valign="bottom" class="card-header color-white no-border ">Lo mejor que hay en mi vida</div>
+                    <div class="card-con tent">
                       <div class="card-content-inner">
-                        <div class="divClear"></div>
-                        <div class="content-block">
-                          <div class="chip">
-                            <div class="chip-media">
-                              <img src="http://cdn-images.deezer.com/images/artist/ac944b5966934c96128a4acc777fd47c/56x56-000000-80-0-0.jpg">
-                            </div>
-                            <div class="chip-label">J. Cole</div>
-                          </div>
-                        </div>
-                        <div class="divClear"></div>
+                        <p class="color-gray">Andrés Cepeda</p>
                       </div>
                     </div>
                     <div class="card-footer no-border">
-                      <a href="#" class="link">Like</a>
-                      <a href="#" class="link">Share</a>
+                      <a href="#" class="playVideo down">
+                        <span class="imgPause"></span>
+                      </a>
+                      <img class="playGif" border="0" src="css/img/PlayGif.GIF" style="display: block;">
+                      <a href="#" class="Download">
+                        <span class="imgDownload" id-pista="44761691"></span>
+                      </a>
                     </div>
-                  </div>
+                  </div>  
+                  
                 </div>
               </div> 
               
@@ -108,10 +100,10 @@
           </div>
         </div>
         
-        <!-- Bottom Toolbar-->
+        <!-- Bottom Toolbar
         <div class="toolbar">
           <div class="toolbar-inner"><a href="#" class="button0 link">Link 1</a><a href="#" class="link">Link 4</a></div>
-        </div>
+        </div>-->
       </div>
     </div>
     

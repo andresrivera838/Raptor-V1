@@ -1,6 +1,8 @@
 var ref = {};
 var myApp = new Framework7(); 
+var mainView = myApp.addView('.view-main');
 var $$ = Dom7;
+
 
 /********************************
     constantes
@@ -11,6 +13,17 @@ var HOSTNAME = 'https://raptor-speakerblack.c9users.io/';
 var generalServiceSetup = {
    urlReusables: HOSTNAME + 'server/post/track/'
 };
+
+
+  
+var myApp = new Framework7({
+    pushState: true,
+    swipePanel: 'left',
+    material: true
+    // ... other parameters
+});
+    
+    
 
 /********************************
     fin constantes
@@ -38,51 +51,31 @@ var errorMsg = {
 
 function events(){
     
-  
-    var myApp = new Framework7({
-        pushState: true,
-        swipePanel: 'left',
-        material: true
-        // ... other parameters
-    });
-    
-    
     $$('#searchPista').on('click', function(){
         $('.containPistas').empty();
         var pista =  $('.searchM').val();
-        getPista({
-            parameter: pista
-        });
+        $('.progressbar-infinite').show();
+        if(getPista({parameter: pista})){
+            
+        }else{
+            
+        }
+        
     });
     
     var playing = false;
+    var PistaA, fatherP;
     
- 
+    if(!playing){
+        $('.playGif').hide();
+    }
     
- 
-    $('.algo').on('click', function() {
-        alert("s");
-        /*$(this).toggleClass("down");
-        
-        console.log($(this).parents());
- 
-        if (playing == false) {
-            document.getElementById('player0').play();
-            playing = true;
-            $(this).text("Parar Sonido");
- 
-        } else {
-            document.getElementById('player0').pause();
-            playing = false;
-            $(this).text("Reiniciar Sonido");
-        }*/
+    $('.Download').on('click', function(){
+        var id_obj = $(this).children('.imgDownload').attr('id-pista');
+        download(id_obj);
     });
     
-    var playing = false;
-    var PistaA;
-        
     $(".card").on("click", ".playVideo", function(){
-        
         
         var padre = $(this).parents('.card');
         var id = $(padre).attr('id');
@@ -91,23 +84,60 @@ function events(){
  
         if (playing == false) {
             
+            /* condicion para pausar audio anterior */
+            
             if(PistaA){
                 document.getElementById(PistaA).pause();
+                $('#'+fatherP+' .playGif').hide();
+                $('#'+fatherP+' .imgPause').addClass('imgPlay');
+                $('#'+fatherP+' .imgPause').removeClass('imgPause');
             }
+            
             var idPista = $('#'+id+' .player').attr('id');
+            
+            $('#'+id+' .playGif').show();
             document.getElementById(idPista).play();
+            $(this).html("<span class='imgPause'></span>");
+            
+            /* funcion a finalizar audio */
+            
+            document.getElementById(idPista).onended = function() {
+                $('#'+id+' .playGif').hide();
+                myApp.addNotification({
+                    message: 'estabas escuchando un preiew de <br> '+  $('#'+id+' .card-header').html()+'',
+                });
+            }; 
+            
+            /* llenando varibles globales */
+            
             playing = true;
             PistaA = idPista;
-            //$(this).text("Parar Sonido");
- 
+            fatherP = id;
+            
         } else {
             var idPista = $('#'+id+' .player').attr('id');
+            $('#'+id+' .playGif').hide();
             document.getElementById(idPista).pause();
             playing = false;
-            //$(this).text("Reiniciar Sonido");
+            $(this).html("<span class='imgPlay'></span>");
         }
     });
 };
+
+
+function download(obj_id) {
+    $.ajax({
+		data: {id: obj_id},
+		type: "POST",
+		url:  generalServiceSetup.urlReusables + "download",
+	})
+	.done(function( data, textStatus, jqXHR ) {
+ 		console.log(jQuery.parseJSON(data));		
+    })
+      .fail(function( jqXHR, textStatus, errorThrown ) {
+    	    console.log(errorThrown);
+    });
+}
 
 function getPista(p_obj) {
     
@@ -123,32 +153,30 @@ function getPista(p_obj) {
              
             console.log(datos);
             
+            var gif = '<img class="playGif" border=0 src="css/img/PlayGif.GIF">';
+            
+            
             $.each(datos.data.data, function(i,item){
     			var newPageContent = '<div id="searchPt'+i+'" class="card demo-card-header-pic">'+
     			                        '<audio class="player" id="playerVideo'+i+'" src="'+ datos.data.data[i].preview +'"> </audio>'+
                                         '<div style="background-image:url('+ datos.data.data[i].album.cover_medium +')" '+
-                                        ' valign="bottom" class="card-header color-white no-border playVideo">'+ datos.data.data[i].title +'</div>'+
+                                        ' valign="bottom" class="card-header color-white no-border ">'+ datos.data.data[i].title +'</div>'+
                                         '<div class="card-con tent">'+
                                           '<div class="card-content-inner">'+
-                                            '<div class="divClear"></div>'+
-                                            '<div class="content-block">'+
-                                              '<div class="chip">'+
-                                                '<div class="chip-media"><img src="'+ datos.data.data[i].artist.picture_small +'"></div>'+
-                                                '<div class="chip-label">'+ datos.data.data[i].artist.name +'</div>'+
-                                              '</div>'+
-                                            '</div>'+
-                                            '<div class="divClear"></div>'+
+                                            '<p class="color-gray">'+ datos.data.data[i].artist.name +'</p>'+
                                           '</div>'+
                                         '</div>'+
                                         '<div class="card-footer no-border">'+
-                                            '<a href="#" class="link">Like</a>'+
-                                            '<a href="#" class="link">Share</a>'+
+                                            '<a href="#" class="playVideo"><span class="imgPlay"></span></a>'+
+                                            ''+gif+''+
+                                            '<a href="#" class="Download">'+
+                                            '<span class="imgDownload" id-pista="'+ datos.data.data[i].id +'"></span></a>'+
                                         '</div>'+
                                     '</div>';
                $('.containPistas').append(newPageContent);
     		});
     		events();
-    	                       
+    		$('.progressbar-infinite').hide();
     })
     .fail(function( jqXHR, textStatus, errorThrown ) {
     	    console.log(errorThrown);
@@ -157,6 +185,7 @@ function getPista(p_obj) {
 
 function init() {
 	events();
+	$('.progressbar-infinite').hide();
 	// openGame();   
 }
 
