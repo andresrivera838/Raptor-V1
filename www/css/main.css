@@ -1,0 +1,62 @@
+/*------------------------- Plantilla reset estilos --------------------*/
+/*------------------------- Plantilla reset estilos --------------------*/
+/* ==========================================================================
+   Browse Happy prompt
+   ========================================================================== */
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+/* line 1, ../sass/_generales.scss */
+.demo-card-header-pic .card-header {
+  height: 40vw;
+  background-size: contain;
+  background-position: center;
+}
+
+/* line 7, ../sass/_generales.scss */
+.imgPlay {
+  width: 40px;
+  height: 40px;
+  background: url("img/ic_play_circle_outline_white_24px.svg");
+  background-size: contain;
+  display: inline-block;
+  position: relative;
+}
+
+/* line 16, ../sass/_generales.scss */
+.imgPause {
+  width: 40px;
+  height: 40px;
+  background: url("img/ic_pause_circle_outline_white_24px.svg");
+  background-size: contain;
+  display: inline-block;
+  position: relative;
+}
+
+/* line 25, ../sass/_generales.scss */
+.imgDownload {
+  width: 40px;
+  height: 40px;
+  background: url("img/ic_cloud_download_white_24px.svg");
+  background-size: contain;
+  display: inline-block;
+  position: relative;
+}
+
+/* line 34, ../sass/_generales.scss */
+.searchbar {
+  display: -webkit-inline-box;
+}
+
+/* line 38, ../sass/_generales.scss */
+.progressbarStyle {
+  display: none;
+}
+
+/* line 42, ../sass/_generales.scss */
+.notifications {
+  background: #000;
+}
+
+/*------------------------- Plantillas media queries helper classes --------------------*/
+/*------------------------- Plantillas media queries helper classes --------------------*/

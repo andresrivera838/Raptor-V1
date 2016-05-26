@@ -6,7 +6,7 @@ module.exports = function(grunt) {
 
 
     path = require('path');
-    devPath = '_dev/';
+    devPath = 'www/';
     buildPath = './build/';
     jsIncludePath = devPath + '/js/includeJS.json';
 
@@ -32,8 +32,8 @@ module.exports = function(grunt) {
             },
             local_dependencies: {
                 files: {
-                    './_dev/index.html': [devPath + 'js/vendor/*.js', devPath + 'css/vendor/*.css', devPath + 'css/main.css'],
-                    './_dev/desafio-2.html': [devPath + 'js/vendor/*.js', devPath + 'css/vendor/*.css', devPath + 'css/main.css']
+                    './www/index.html': [devPath + 'js/vendor/*.js', devPath + 'css/vendor/*.css', devPath + 'css/main.css'],
+                    './www/desafio-2.html': [devPath + 'js/vendor/*.js', devPath + 'css/vendor/*.css', devPath + 'css/main.css']
                 }
             }
         },
@@ -50,8 +50,8 @@ module.exports = function(grunt) {
             },
             build: {
                 files: {
-                    '_dev/js/minions.min.js': devPath + 'js/minions.js',
-                    '_dev/js/vendor.min.js': devPath + 'js/vendor.js'
+                    'www/js/minions.min.js': devPath + 'js/minions.js',
+                    'www/js/vendor.min.js': devPath + 'js/vendor.js'
                 }
             }
         },
@@ -61,7 +61,7 @@ module.exports = function(grunt) {
                 tasks: ['concat']
             },
             mySassFiles: {
-                files: [devPath + 'sass/**/*.scss',devPath + 'sass/**/*.sass', '_dev/sprites/**/*.png'],
+                files: [devPath + 'sass/**/*.scss',devPath + 'sass/**/*.sass', 'www/sprites/**/*.png'],
                 tasks: ['compass']
             },
             injectorTask: {
